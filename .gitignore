@@ -2,3 +2,5 @@
 *.tlog
 *.log
 *.lastbuildstate
+*.idb
+*.pdb

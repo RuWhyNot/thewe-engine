@@ -1,4 +1,0 @@
-﻿  MciPlayer.cpp
-  SimpleAudioEngine.cpp
-d:\theweproject\cocos2d\cocos\2d\cclabel.h(276): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data (..\win32\SimpleAudioEngine.cpp)
-  CocosDenshion.vcxproj -> D:\TheWeProject\proj.win32\Debug.win32\libAudio.lib
