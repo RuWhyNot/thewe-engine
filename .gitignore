@@ -4,3 +4,5 @@
 *.lastbuildstate
 *.idb
 *.pdb
+jarlist.cache
+libcocos2dx.jar
