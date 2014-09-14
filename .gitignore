@@ -6,4 +6,3 @@
 *.pdb
 jarlist.cache
 libcocos2dx.jar
-cocos/platform/android/java/bin/
