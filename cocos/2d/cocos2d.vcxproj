@@ -51,11 +51,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration).win32\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Libraries_$(Configuration).win32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Intermediate_$(Configuration).win32\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration).win32\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration).win32\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Libraries_$(Configuration).win32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Intermediate_$(Configuration).win32\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
@@ -92,17 +92,29 @@
     </ClCompile>
     <PreLinkEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.*" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.lib" "$(OutDir)"
+
+xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.dll" "$(SolutionDir)Binaries\"
 </Command>
     </PreLinkEvent>
     <Link>
@@ -141,17 +153,29 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.*" "$(Ou
     </ClCompile>
     <PreLinkEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.*" "$(OutDir)"
-xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.*" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.lib" "$(OutDir)"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.lib" "$(OutDir)"
+
+xcopy /Y /Q "$(ProjectDir)..\..\external\freetype2\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\glfw3\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\curl\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\jpeg\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\png\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\tiff\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\webp\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\websockets\prebuilt\win32\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\zlib\prebuilt\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\icon\prebuilt\*.dll" "$(SolutionDir)Binaries\"
+xcopy /Y /Q "$(ProjectDir)..\..\external\win32-specific\gles\prebuilt\*.dll" "$(SolutionDir)Binaries\"
 </Command>
     </PreLinkEvent>
     <Link>
