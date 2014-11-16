@@ -28,10 +28,14 @@ add_library(cocos2d STATIC
   ${COCOS_RENDERER_SRC}
   ${COCOS_MATH_SRC}
   ${COCOS_PHYSICS_SRC}
-  ${COCOS_UI_SRC}
   ${COCOS_NETWORK_SRC}
   ${COCOS_STORAGE_SRC}
   ${COCOS_DEPRECATED_SRC}
+)
+
+# компилим ui отдельно от cocos2d (костыль)
+add_library(ui STATIC
+  ${COCOS_UI_SRC}
 )
 
 if(WIN32)
